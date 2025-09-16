@@ -18,17 +18,20 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 Commençons par filtrer les données pour retirer le point représenté par Trinité et Tobago (TTO) qui est un outlier.
 
 ```{r filter-data, message=FALSE}
-plastic_waste <- plastic_waste %>%
-  filter(plastic_waste_per_cap < 3.5)
+ plastic_waste %>%
+  filter(plastic_waste_per_cap< 3.5) 
 ```
-
 
 ## Exercices
 
 ### Exercise 1
 
 ```{r plastic-waste-continent}
-# insert code here
+  
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth = 0.2, binheight=5)+
+facet_grid(~continent) +
+  facet_wrap(~continent,ncol =3)
 ```
 
 ### Exercise 2
@@ -57,7 +60,6 @@ Réponse à la question...
 
 ### Exercise 4
 
-
 ```{r plastic-waste-mismanaged}
 # insert code here
 ```
@@ -65,7 +67,6 @@ Réponse à la question...
 Réponse à la question...
 
 ### Exercise 5
-
 
 ```{r plastic-waste-population-total}
 # insert code here
