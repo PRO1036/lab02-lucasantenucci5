@@ -51,16 +51,20 @@ Les réglages color et fill sont dans aes parce qu'ils sont associés aux variab
 Boxplot:
 
 ```{r plastic-waste-boxplot}
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = plastic_waste_per_cap, x=continent)) + 
+  geom_boxplot()
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = plastic_waste_per_cap, x=continent)) + 
+  geom_violin()
 ```
 
-Réponse à la question...
+On peut voir plus précisément la distribution de l'ordonnée.
 
 ### Exercise 4
 

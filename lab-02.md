@@ -74,16 +74,24 @@ variables tandis que alpha vient régler un paramètre du graphique.
 Boxplot:
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = plastic_waste_per_cap, x=continent)) + 
+  geom_boxplot()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-boxplot-1.png)<!-- -->
 
 Violin plot:
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = plastic_waste_per_cap, x=continent)) + 
+  geom_violin()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+On peut voir plus précisément la distribution de l’ordonnée.
 
 ### Exercise 4
 
