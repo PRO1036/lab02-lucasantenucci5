@@ -13,6 +13,8 @@ library(tidyverse)
 
 ```{r load-data, message=FALSE}
 plastic_waste <- read_csv("data/plastic-waste.csv")
+ plastic_waste %>%
+  filter(plastic_waste_per_cap< 3.5)
 ```
 
 Commençons par filtrer les données pour retirer le point représenté par Trinité et Tobago (TTO) qui est un outlier.
@@ -69,10 +71,12 @@ On peut voir plus précisément la distribution de l'ordonnée.
 ### Exercise 4
 
 ```{r plastic-waste-mismanaged}
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap, color=continent)) + 
+  geom_point()
 ```
 
-Réponse à la question...
+On peut qui gère bien ses déchets. L'Afrique gère mal ses déchets ( deux variables proportionnelles), l'Europe gère bien ses déchets. On peut maintenant voir un échelle de quels continents gèrent bien leurs déchets.
 
 ### Exercise 5
 
