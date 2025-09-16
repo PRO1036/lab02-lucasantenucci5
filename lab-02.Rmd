@@ -41,10 +41,10 @@ Les pays de l'Afrique, l'océanie et l'Asie font peu de déchet comparés à ceu
 
 ```{r plastic-waste-density}
 ggplot(data = plastic_waste%>%
-filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap)) + geom_density()
+filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap, color=continent, fill =continent, )) + geom_density(alpha = 0.5)
 ```
 
-Réponse à la question...
+Les réglages color et fill sont dans aes parce qu'ils sont associés aux variables tandis que alpha vient régler un paramètre du graphique.
 
 ### Exercise 3
 

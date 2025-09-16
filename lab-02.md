@@ -61,12 +61,13 @@ ceux de l’Amérique du Nord, du Sud et l’Europe.
 
 ``` r
 ggplot(data = plastic_waste%>%
-filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap)) + geom_density()
+filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap, color=continent, fill =continent, )) + geom_density(alpha = 0.5)
 ```
 
 ![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
 
-Réponse à la question…
+Les réglages color et fill sont dans aes parce qu’ils sont associés aux
+variables tandis que alpha vient régler un paramètre du graphique.
 
 ### Exercise 3
 
