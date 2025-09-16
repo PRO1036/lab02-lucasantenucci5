@@ -156,5 +156,23 @@ populations plus importantes.
 Recréez la visualisation:
 
 ``` r
-# insert code here
+  ggplot(data = plastic_waste%>%
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3), aes(x = coastal_pop_prop,y=plastic_waste_per_cap, color=continent, )) + 
+  geom_point() +
+     geom_smooth(method="loess",
+                 se= TRUE,
+                 color="black",
+                 fill="gray") +
+    labs(x= "Proportion de la polulation côtière", y="Nombre de déchets plastiques par habitant",title= "Quantité de déchets plastique selon la proportion de la population côtière",subtitle = "Selon le continent", lengend="Continent" ) 
 ```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 10 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
