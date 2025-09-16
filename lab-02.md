@@ -130,14 +130,26 @@ déchets.
 ### Exercise 5
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = total_pop,x=plastic_waste_per_cap, color=continent)) + 
+  geom_point()
 ```
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-population-total-1.png)<!-- -->
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = coastal_pop,x=plastic_waste_per_cap, color=continent)) + 
+  geom_point()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-population-coastal-1.png)<!-- -->
+
+Dans les zones cotières, il y a moins de déchets produient pour des
+populations plus importantes.
 
 ## Conclusion
 

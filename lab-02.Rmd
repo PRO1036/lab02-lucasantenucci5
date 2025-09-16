@@ -81,14 +81,18 @@ On peut qui gère bien ses déchets. L'Afrique gère mal ses déchets ( deux var
 ### Exercise 5
 
 ```{r plastic-waste-population-total}
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = total_pop,x=plastic_waste_per_cap, color=continent)) + 
+  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(y = coastal_pop,x=plastic_waste_per_cap, color=continent)) + 
+  geom_point()
 ```
 
-Réponse à la question...
+Dans les zones cotières, il y a moins de déchets produient pour des populations plus importantes.
 
 ## Conclusion
 
