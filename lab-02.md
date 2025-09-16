@@ -54,6 +54,9 @@ facet_grid(~continent) +
 
 ![](lab-02_files/figure-gfm/plastic-waste-continent-1.png)<!-- -->
 
+Les pays de l’Afrique, l’océanie et l’Asie font peu de déchet comparés à
+ceux de l’Amérique du Nord, du Sud et l’Europe.
+
 ### Exercise 2
 
 ``` r

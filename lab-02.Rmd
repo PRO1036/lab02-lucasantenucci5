@@ -32,7 +32,10 @@ ggplot(data = plastic_waste%>%
 filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth = 0.2, binheight=5)+
 facet_grid(~continent) +
   facet_wrap(~continent,ncol =3)
+
 ```
+
+Les pays de l'Afrique, l'océanie et l'Asie font peu de déchet comparés à ceux de l'Amérique du Nord, du Sud et l'Europe.
 
 ### Exercise 2
 
