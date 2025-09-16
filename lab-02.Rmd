@@ -37,7 +37,8 @@ facet_grid(~continent) +
 ### Exercise 2
 
 ```{r plastic-waste-density}
-# insert code here
+ggplot(data = plastic_waste%>%
+filter(plastic_waste_per_cap < 3.5), aes(x = plastic_waste_per_cap)) + geom_density()
 ```
 
 Réponse à la question...
